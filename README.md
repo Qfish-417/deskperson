@@ -1,6 +1,31 @@
 # DeskPerson - 桌面AI伴侣项目
 
-基于 Mate-Engine 的桌面AI伴侣项目，支持VRM模型加载、GPT-SoVITS语音克隆、实时交互声音播放等功能。
+基于 [Mate-Engine](https://github.com/shinyflvre/Mate-Engine) 的桌面AI伴侣项目，支持VRM模型加载、GPT-SoVITS语音克隆、实时交互声音播放等功能。
+
+## ⚖️ 许可证和版权声明
+
+### 原项目许可证
+
+本项目是基于 [Mate-Engine](https://github.com/shinyflvre/Mate-Engine) 的**衍生作品**。
+
+**原项目采用混合许可证：**
+- **GNU AGPL v3** (GNU通用公共许可证第3版，带额外条款)
+- **MateProv2 License** (Mate系统专有二级许可证)
+
+**使用本项目前，请仔细阅读并遵守上述两类许可证的完整条款。**
+
+### 本项目的许可证
+
+本项目作为Mate-Engine的衍生作品，遵循 **GNU AGPL v3** 许可证。
+
+详见：[LICENSE](LICENSE) 文件。
+
+### 版权声明
+
+- **原项目 (Mate-Engine) 版权**：© shinyflvre
+- **本项目版权**：© 2026 Qfish-417
+- **默认Avatar版权**：默认内置角色的所有权利归 [Yorshka Shop](https://yorshkasencho.booth.pm/) 所有。**禁止在自行构建的分发包中重新分发该模型**。
+- **内置AI模型版权**：集成的 `QWEN 2.5 1.5b LLM` 模型采用 `Apache License Version 2.0` 协议。
 
 ## ✨ 功能特性
 
@@ -23,6 +48,7 @@ deskperson/
 ├── 一键启动.bat                # 一键启动脚本
 ├── start_omnivoice_tts_server.bat  # OmniVoice启动脚本
 ├── .gitignore                 # Git忽略文件
+├── LICENSE                    # GNU AGPL v3 许可证
 └── README.md                 # 项目说明文档
 ```
 
@@ -120,6 +146,36 @@ GET http://127.0.0.1:9880/tts?text=你好&text_lang=zh&ref_audio_path=ref.mp3&pr
 - 检测鼠标点击并播放随机音频
 - 使用Windows PlaySoundW API，无窗口弹出
 
+## ⚠️ 使用规则和合规要求
+
+### 必须遵守的规则
+
+1. **模型使用要求**：
+   - 仅可使用符合VRM 0.x/1.x规范的自定义模型
+   - **禁止使用未授权的第三方版权模型**
+   - 内置默认模型不得二次分发
+
+2. **开发要求**：
+   - 若分发修改后的版本，需遵守 **GNU AGPL v3** 的强制要求
+   - 必须公开修改后的源代码
+   - 必须保留原许可证声明
+   - 不得移除原作者版权信息
+
+3. **模特来源声明**：
+   - 本项目使用的 **芙宁娜模型** 来源于：[aplaybox](https://www.aplaybox.com/details/model/Z5pE6HJacOlc)
+   - 请遵守该模型的原创作者和使用条款
+
+4. **商业使用**：
+   - 商业分发需额外确认 `MateProv2 License` 的商业使用条款
+   - 公益/个人非商业分发需保留完整许可证和版权声明
+
+### 免责声明
+
+- 本项目仅供学习研究使用
+- 请遵守相关法律法规和模型许可证要求
+- 使用第三方模型时，请确保已获得合法授权
+- 因不当使用造成的任何问题，本项目不承担任何责任
+
 ## 🔧 配置参数
 
 ### interaction_sound_player_v6.py
@@ -149,11 +205,13 @@ DEVICE = "cuda"  # 或 "cpu"
 
 - **GPT-SoVITS**: [https://github.com/RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
 - **OmniVoice**: [官方发布页](https://example.com) (请替换为实际链接)
+- **芙宁娜VRM模型**: [aplaybox - 芙宁娜](https://www.aplaybox.com/details/model/Z5pE6HJacOlc)
 
 下载后将模型文件放在以下目录：
 ```
 D:/voice/models/           # GPT-SoVITS模型
 D:/voice/omnivoice/       # OmniVoice模型
+D:/Mate-Engine/           # VRM模型文件
 ```
 
 ## 🐛 常见问题
@@ -178,13 +236,16 @@ D:/voice/omnivoice/       # OmniVoice模型
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。
+本项目采用 **GNU AGPL v3** 许可证。
+
+详见：[LICENSE](LICENSE) 文件。
 
 ## 🙏 致谢
 
+- [Mate-Engine](https://github.com/shinyflvre/Mate-Engine) - 原项目 (© shinyflvre)
 - [GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS) - TTS引擎
 - [OmniVoice](https://github.com/xxx) - TTS引擎
-- [Mate-Engine](https://github.com/xxx) - 游戏引擎
+- [aplaybox - 芙宁娜模型](https://www.aplaybox.com/details/model/Z5pE6HJacOlc) - VRM模型来源
 
 ## 📧 联系方式
 
@@ -192,4 +253,7 @@ D:/voice/omnivoice/       # OmniVoice模型
 
 ---
 
-**注意**: 本項目仅供学习研究使用，请遵守相关法律法规和模型许可证要求。
+**注意**: 
+- 本项目是 [Mate-Engine](https://github.com/shinyflvre/Mate-Engine) 的衍生作品
+- 使用本项目前，请仔细阅读并遵守 **GNU AGPL v3** 和 **MateProv2 License**
+- 请确保使用的所有模型均已获得合法授权
